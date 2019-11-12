@@ -3,6 +3,7 @@
 #include <math.h>
 #include <string.h>
 
+
 void PrintGraph(int amount, int **conn_elements, char **name_elements) {
     printf("--------------------\n"); //related graph / unrelated graph
     _Bool relat_graph = 1;

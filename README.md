@@ -1,5 +1,4 @@
-# bmstu_dz4 [![Build Status](https://travis-ci.org/ph4nt0m7/bmstu_dz.svg)](https://travis-ci.org/ph4nt0m7/bmstu_dz)
-
+# ДЗ4 по ФЛиТЕ [![Build Status](https://travis-ci.org/ph4nt0m7/bmstu_dz.svg)](https://travis-ci.org/ph4nt0m7/bmstu_dz)
 Сортировка графа сортировкой Шелла
 ---
     @param  amount  amount of vertexes

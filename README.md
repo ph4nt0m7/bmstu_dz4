@@ -5,3 +5,7 @@
     @param  names   array of names of vertexes
     @param  conns   table of connection for all vertexes
     @param  mode    "asc" / "ASC" / "Asc" OR "desc" / "DESC" / "Desc" [if no one uses desc]
+
+Запуск и использование
+------------
+*Программа предназначена для использования на clang компиляторе. Вся программа содержится в main.c. Обязательная установка команды graphviz*

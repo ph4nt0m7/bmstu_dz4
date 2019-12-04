@@ -3,7 +3,6 @@
 #include <math.h>
 #include <string.h>
 
-
 void PrintGraph(int amount, int **conn_elements, char **name_elements) {
     printf("--------------------\n"); //related graph / unrelated graph
     _Bool relat_graph = 1;
@@ -74,6 +73,7 @@ void SortShellGraph(int amount, char **names, int **conns, char mode[5]) {
             }
         }
     }
+    
     if( (strcmp(mode, "asc") || strcmp(mode, "ASC") || strcmp(mode, "Asc")) != 0 ){
         for(int i=0; i<amount/2; i++){
             int temp = vertex_degree[i];
@@ -88,16 +88,26 @@ void SortShellGraph(int amount, char **names, int **conns, char mode[5]) {
 
     char **temp_names = calloc(amount, sizeof(char*));
     int **temp_conns   = calloc(amount, sizeof(int*));
-    
-    for(int i=0; i<amount; i++){
+    for(int i=0; i<amount; i++)
         temp_names[i] = names[i];
+
+    for(int i=0; i<amount; i++){
+        int temp_arr[amount];
+        for(int j=0; j<amount; j++)
+            temp_arr[j] = 0;
+            
+        for(int j=0; j<amount; j++)
+            temp_arr[j] = conns[i][ temp_changes[j] ];
+        
+        for(int j=0; j<amount; j++)
+            conns[i][j] = temp_arr[j];
+        
         temp_conns[i] = conns[i];
     }
-
+    
     for(int i=0; i<amount; i++){
         names[i] = temp_names[ temp_changes[i] ];
         conns[i] = temp_conns[ temp_changes[i] ];
-
     }
     printf("\n");
     free(vertex_degree);
@@ -310,4 +320,3 @@ int main() {
     printf("\nBYE...\n");
     return 0;
 }
-
